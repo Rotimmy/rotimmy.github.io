@@ -1,0 +1,287 @@
+body {
+  color:white;
+  background-color: #62dbb3;
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  color: white;
+  font-size: 4em;
+}
+
+section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width:100%;
+  height:100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+section + section {
+  border-top: 60px solid white;
+}
+section:nth-of-type(even) {
+  background-color: #6be5bc;
+}
+
+section:nth-of-type(even) a {
+  color: #C690E5;
+}
+
+section:nth-of-type(odd) {
+  background-color: #C690E5;
+}
+
+section:nth-of-type(odd) a {
+  color: #6be5bc;
+}
+
+.navbar {
+  position:absolute;
+  top:0px;
+  width:100%;
+  padding:0px;
+}
+
+.navbar-nav {
+  margin:auto!important;
+}
+
+.navbar-brand {
+  font-family:'Libre Barcode 128 Text', cursive;
+  font-size:2.5em;
+  padding:0px;
+}
+
+.nav-fix {
+  position:fixed;
+  top:0px;
+  z-index:1;
+}
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+	40% {
+    @include transform(translateY(-9px));
+  }
+	60% {
+    @include transform(translateY(-3px));
+  }
+}
+
+a.down-arrow {
+  position:absolute;
+  bottom:20px;
+  color:white!important;
+  font-size: 2em;
+  -webkit-transition: width .1s; /* Safari */
+  transition: width .1s;
+}
+
+a.up-arrow {
+  position:absolute;
+  top:90px;
+  color:white!important;
+  font-size: 2em;
+}
+
+.class {
+  position:absolute;
+  bottom:30px;
+}
+
+a.down-arrow:hover, a.up-arrow:hover {
+  text-decoration: none;
+}
+
+.bounce {
+  @include animation(bounce 2s infinite);
+}
+
+span#tim {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3.6em;
+}
+
+span#design {
+  font-family:'Monofett', cursive;
+  font-size:3em;
+  letter-spacing:-3.5px;
+}
+
+#splash nav a {
+  color:white!important;
+  font-weight:600;
+}
+
+#splash nav a:hover {
+  color:#6be5bc;
+}
+
+#splash .nav {
+  padding:4px 10px;
+  border:2px solid #6be5bc;
+  border-radius:25px;
+  margin-top:0px;
+}
+
+#splash {
+  background-image:url("https://media.giphy.com/media/3o85xGFFW31jqtDgFW/giphy.gif");
+}
+
+#brand {
+  width:240px;
+  margin:0px auto;
+}
+
+#about {
+  background-color: rgba(103, 218, 180, 0.8);
+  position: relative;
+  border-top: 0px;
+}
+
+#about::after {
+  content: "";
+  background: url("../images/timmy-bg.jpeg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.card, .card-header {
+  background-color: transparent;
+  border:none;
+}
+
+.card span {
+  color:#C690E5;
+  font-size: 2em;
+  display: inline-block;
+
+}
+
+span.plus, span.minus {
+  vertical-align: bottom;
+}
+
+span.plus::before {
+  content:"+ ";
+}
+
+span.minus::before {
+  content:"- ";
+}
+
+#accordion ul {
+  list-style-type: none;
+}
+
+span.year {
+  font-family: "Reenie Beanie", cursive;
+  color:white!important;
+  font-size: 2em!important;
+  padding-right: 10px;
+}
+
+
+#about .btn-link {
+  color:white;
+  text-decoration: underline;
+  font-size: 2rem;
+  line-height: 1em;
+}
+
+#about .btn-link:hover, #portfolio .btn-link:focus, #portfolio .btn-link:active {
+  color:#C690E5;
+}
+
+#portfolio {
+  flex-flow: column;
+}
+
+#portfolio h3 {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+a#projectName {
+  align-self: flex-start;
+  height:20px;
+  margin-bottom: 20px;
+  color:#74f2ca;
+}
+
+#portfolio div {
+  width:50%;
+  margin-bottom: 20px
+}
+
+#projects {
+  height:50%;
+  display:grid;
+  grid-template: auto / repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+#projects p {
+  margin-bottom: 0px;
+}
+
+#projects img {
+  width:160px;
+}
+
+#contact {
+  /* background-color: #74f2ca; */
+}
+
+div#form {
+  width: 50%;
+}
+
+#form h3 {
+  margin-bottom:15px;
+}
+
+::placeholder {
+  color: #bababa!important;
+}
+
+.form-control:focus {
+  border-color: rgba(198, 144, 229, 0.8)!important;
+  box-shadow: 0 0 0 0.2rem rgba(198, 144, 229,.5);
+}
+
+.button {
+  text-align: right;
+}
+
+.btn-primary {
+  background: #C690E5;
+  border:none;
+  padding: .5rem 1rem;
+}
+
+.btn-primary:hover {
+  background: #C690E5;
+  box-shadow: 0 0 0 0.2rem rgba(198, 144, 229,.5);
+}
+
+#form .btn-primary:active {
+  background:white!important;
+  color:#C690E5!important;
+  border-color:#C690E5!important;
+  box-shadow: 0 0 0 0.2rem rgba(198, 144, 229,.5);
+}
