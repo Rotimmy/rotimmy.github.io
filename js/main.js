@@ -1,18 +1,16 @@
-
-
 $(document).ready(function(){
 
   // nav affix
   $(window).on('scroll', function(){
 
     var scrollTop     = $(window).scrollTop(),
-        elementOffset = $('#about').offset().top,
+        elementOffset = $('#portfolio').offset().top,
         distance      = (elementOffset - scrollTop);
 
     if ( distance <= 0 ) {
-      $('.navbar').addClass('nav-fix');
+      $('a.navbar-brand').addClass('nav-fix');
     } else if ( distance > 0 ) {
-      $('.navbar').removeClass('nav-fix');
+      $('a.navbar-brand').removeClass('nav-fix');
     };
   });
 
@@ -32,7 +30,6 @@ $(document).ready(function(){
   });
 
   // collapse symbol
-
   $('#background .btn-link').on('click', function(){
     if ($('#background span').hasClass('plus')) {
       $('#background span').addClass('minus');
@@ -54,126 +51,110 @@ $(document).ready(function(){
   });
 
   // projects mouseover
-  $('#projects img').on('mouseover', function(e){
-    e.preventDefault();
+  $('#projects a').on('mouseover', function(){
 
     if ($(this).hasClass('levine')) {
-      $('#projectName').text('marclevine.org').attr('href', 'https://www.marclevine.org');
-    } else if ($(this).hasClass('lovelee')) {
-      $('#projectName').text('beccasloveleelashes.com').attr('href', 'https://www.beccasloveleelashes.com');
-    } else if ($(this).hasClass('leftfield')) {
-      $('#projectName').text('leftfield.club').attr('href', 'https://www.leftfield.club');
+      $('#projectName').text('marclevine.org').attr('href', 'https://www.marclevine.org/');
+    } else if ($(this).hasClass('olivieri')) {
+      $('#projectName').text('victorforsf.com').attr('href', 'https://www.victorforsf.com/');
+    } else if ($(this).hasClass('butt')) {
+      $('#projectName').text('tombuttforrichmond.com').attr('href', 'https://www.tombuttforrichmond.com/');
+    } else if ($(this).hasClass('tung')) {
+      $('#projectName').text('nancytung2019.com').attr('href', 'https://www.nancytung2019.com/');
     };
 
-    $(this).animate( {
-      width: '200px'
-      }, 300,
-      function() {
-        $(this).on('mouseleave', function(){
+    // $(this).animate( {
+    //   width: '105%'
+    //   }, 300,
+    //   function() {
+    //     $(this).on('mouseleave', function(){
+    //
+    //       $(this).animate({
+    //         width: '100%'
+    //       }, 100);
+    //
+    //   })
+    // });
 
-          $(this).animate({
-            width: '160px'
-          }, 100);
+  });
 
-        })
-      });
-
-    });
-
-  // design blinker
-
-  var interval, i = 0, design = ['d','e','s','i','g','n'];
-
-  var colors = [
-    {
-      d:'#C690E5',
-      e:'white',
-      s:'white',
-      i:'black',
-      g:'#C690E5',
-      n:'black'
-    },
-    {
-      d:'#c5fffe',
-      e:'#c5fffe',
-      s:'#c5fffe',
-      i:'#8edefd',
-      g:'#a78bfc',
-      n:'#27466f'
-    },
-    {
-      d:'#fff',
-      e:'#FFEAE5',
-      s:'#FFD5CC',
-      i:'#FFAB99',
-      g:'#FF8166',
-      n:'#FF5733'
-    },
-    {
-      d:'#C5A1DC',
-      e:'#AC8DC1',
-      s:'#9479A5',
-      i:'#7B6589',
-      g:'#63516E',
-      n:'#4A3C52'
-    },
-    {
-      d:'#FFAB03',
-      e:'#FFAB03',
-      s:'#FC7F03',
-      i:'#FC3903',
-      g:'#D1024E',
-      n:'#A6026C'
-    }
-  ];
-
-  setInterval(function(){
-
-  var z = Math.floor(Math.random() * colors.length);
-  console.log(colors[z]);
-
-    $('.letter').css({opacity: 1.0}).animate(
-      {opacity:0},
-      200,
-      function (){
-        $('#d').css('color', colors[z].d).animate(
-          {opacity:1.0},
-          50,
-          function (){
-            $('#e').css('color',colors[z].e).animate(
-              {opacity:1.0},
-              50,
-              function (){
-                $('#s').css('color',colors[z].s).animate(
-                  {opacity:1.0},
-                  50,
-                  function (){
-                    $('#i').css('color',colors[z].i).animate(
-                      {opacity:1.0},
-                      50,
-                      function (){
-                        $('#g').css('color',colors[z].g).animate(
-                          {opacity:1.0},
-                          50,
-                          function (){
-                            $('#n').css('color',colors[z].n).animate(
-                              {opacity:1.0},
-                              50
-                            );
-                          }
-                        );
-                      }
-                    );
-                  }
-                );
-              }
-            );
-          }
-        );
-      }
-    );
-
-  }, 3000);
-
-
+  // brand blinker
+  //
+  // var interval, i = 0;
+  //
+  // var colors = [
+  //   {
+  //     d:'#C690E5',
+  //     e:'white',
+  //     s:'white',
+  //     i:'black',
+  //     g:'#C690E5',
+  //     n:'black'
+  //   },
+  //   {
+  //     d:'white',
+  //     e:'white',
+  //     s:'white',
+  //     i:'white',
+  //     g:'white',
+  //     n:'white'
+  //   },
+  //   {
+  //     d:'#c5fffe',
+  //     e:'#c5fffe',
+  //     s:'#c5fffe',
+  //     i:'#8edefd',
+  //     g:'#a78bfc',
+  //     n:'#27466f'
+  //   }
+  // ];
+  //
+  // setInterval(function(){
+  //
+  // var i = Math.floor(Math.random() * colors.length);
+  // console.log(colors[i]);
+  //
+  //   $('.letter').css({opacity: 1.0}).animate(
+  //     {opacity:0},
+  //     200,
+  //     function (){
+  //       $('#d').css('color', colors[i].d).animate(
+  //         {opacity:1.0},
+  //         50,
+  //         function (){
+  //           $('#e').css('color',colors[i].e).animate(
+  //             {opacity:1.0},
+  //             50,
+  //             function (){
+  //               $('#s').css('color',colors[i].s).animate(
+  //                 {opacity:1.0},
+  //                 50,
+  //                 function (){
+  //                   $('#i').css('color',colors[i].i).animate(
+  //                     {opacity:1.0},
+  //                     50,
+  //                     function (){
+  //                       $('#g').css('color',colors[i].g).animate(
+  //                         {opacity:1.0},
+  //                         50,
+  //                         function (){
+  //                           $('#n').css('color',colors[i].n).animate(
+  //                             {opacity:1.0},
+  //                             50
+  //                           );
+  //                         }
+  //                       );
+  //                     }
+  //                   );
+  //                 }
+  //               );
+  //             }
+  //           );
+  //         }
+  //       );
+  //     }
+  //   );
+  //
+  // }, 3000);
+  //
 });
