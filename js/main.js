@@ -53,28 +53,22 @@ $(document).ready(function(){
   // projects mouseover
   $('#projects a').on('mouseover', function(){
 
-    if ($(this).hasClass('levine')) {
-      $('#projectName').text('marclevine.org').attr('href', 'https://www.marclevine.org/');
-    } else if ($(this).hasClass('olivieri')) {
-      $('#projectName').text('victorforsf.com').attr('href', 'https://www.victorforsf.com/');
-    } else if ($(this).hasClass('butt')) {
-      $('#projectName').text('tombuttforrichmond.com').attr('href', 'https://www.tombuttforrichmond.com/');
-    } else if ($(this).hasClass('tung')) {
-      $('#projectName').text('nancytung2019.com').attr('href', 'https://www.nancytung2019.com/');
-    };
+    let url = $(this).attr('href');
+    let projectName = url.replace('https://www.', '');
+        console.log(projectName);
 
-    // $(this).animate( {
-    //   width: '105%'
-    //   }, 300,
-    //   function() {
-    //     $(this).on('mouseleave', function(){
+    $('#projectName').text(projectName).attr('href', url);
     //
-    //       $(this).animate({
-    //         width: '100%'
-    //       }, 100);
-    //
-    //   })
-    // });
+    // if ($(this).hasClass('levine')) {
+    //   $('#projectName').text('marclevine.org').attr('href', 'https://www.marclevine.org/');
+    // } else if ($(this).hasClass('olivieri')) {
+    //   $('#projectName').text('victorforsf.com').attr('href', 'https://www.victorforsf.com/');
+    // } else if ($(this).hasClass('butt')) {
+    //   $('#projectName').text('tombuttforrichmond.com').attr('href', 'https://www.tombuttforrichmond.com/');
+    // } else if ($(this).hasClass('tung')) {
+    //   $('#projectName').text('nancytung2019.com').attr('href', 'https://www.nancytung2019.com/');
+    // };
+
 
   });
 
